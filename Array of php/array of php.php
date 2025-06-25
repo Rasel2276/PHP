@@ -71,7 +71,7 @@
         }
     }
     if(!$found){
-        echo "<p style=color:red;>Student Not Found: $searchRoll</p>";
+        echo "<p style=color:white;>Student Not Found: $searchRoll</p>";
     }
    }
    ?>
