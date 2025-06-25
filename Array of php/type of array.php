@@ -30,3 +30,31 @@ echo $student[2][0];
  echo "<br>";
  echo $person ["email"];
 ?>
+
+<br>
+<br>
+
+
+<?php
+$students = array (
+    array(
+        "name" => "Rasel Hossain",
+        "marks" => array (80,70,90)
+    ),
+    array (
+        "name" => "Saiful Islam",
+        "marks" => array (80,90,85) 
+    )
+
+    );
+foreach ($students as $student) {
+    echo "<h3>Student: " . $student["name"] . "</h3>";
+    echo "Marks: ";
+
+    foreach ($student["marks"] as $mark) {
+        echo $mark . " ";
+    }
+
+    echo "<br><br>";
+}
+?>
