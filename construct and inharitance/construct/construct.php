@@ -77,6 +77,7 @@
             echo "Salary : " . $this->salary;
             echo "<br>";
             echo "Profession : " . $this->profession;
+            echo "<br>";
 
         }
     }
