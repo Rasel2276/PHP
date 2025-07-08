@@ -3,18 +3,18 @@
 class UserData {
     private $name;
     private $id;
-    private $address;
+    private $number;
     private $file;
 
-    public function __construct($name, $id, $address, $file = "data.txt") {
+    public function __construct($name, $id, $number, $file = "data.txt") {
         $this->name = $name;
         $this->id = $id;
-        $this->address = $address;
+        $this->number = $number;
         $this->file = $file;
     }
 
     public function formatData() {
-        return "Name: {$this->name} | ID: {$this->id} | Address: {$this->address}" . PHP_EOL;
+        return "Name: {$this->name} | ID: {$this->id} | Number: {$this->number}" . PHP_EOL;
     }
 
     public function saveToFile() {
@@ -28,9 +28,15 @@ class UserData {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'] ?? '';
     $id = $_POST['id'] ?? '';
-    $address = $_POST['address'] ?? '';
+    $number = $_POST['number'] ?? '';
 
-    $user = new UserData($name, $id, $address);
+    if (preg_match("/^[0-9]{11}$/", $number)) {
+        echo "Valid Number";
+    } else {
+        echo "Invalid Number";
+    }
+
+    $user = new UserData($name, $id, $number);
     echo $user->saveToFile();
 } else {
     echo "Invalid request.";

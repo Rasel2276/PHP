@@ -14,8 +14,8 @@
         <label>ID:</label>
         <input type="text" name="id" required><br><br>
 
-        <label>Adress:</label>
-        <textarea name="address" id="address" required></textarea><br><br>
+        <label>Number:</label>
+        <input type="number" name="number" id="number" required><br><br>
 
         <input type="submit" value="Create File">
     </form>
